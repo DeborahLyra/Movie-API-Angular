@@ -13,8 +13,7 @@ interface Search {
 
 export class ContentService {
 
-   //minha chave:65083f78 prof: 85a0ae7b
-  private url: string = 'http://www.omdbapi.com/?apikey=85a0ae7b'
+  private url: string = 'http://www.omdbapi.com/?apikey=65083f78'
 
   constructor(private http: HttpClient) { }
 
