@@ -17,6 +17,7 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
 
+  //funções que buscam na API
   getMovieTitle(name: string) {
     return this.http.get<Search>(`${this.url}&s=${name}`).pipe(map(result => <Movie[]>result.Search))
   }

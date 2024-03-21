@@ -14,6 +14,8 @@ export class ContentComponent {
   movie$: Observable<Movie[]> | undefined
   searchMovie: any;
 
+  // declarações de variáveis TS e observable é uma representação de uma coleção de valores que podem chegar ao longo do tempo
+
  constructor(private contentService: ContentService){
 
   }

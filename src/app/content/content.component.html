@@ -5,13 +5,15 @@
       <div class="col-12">
         <label for="movieName" class="form-label">Search for a movie:</label>
         <div class="input-group">
-          <input type="text" class="form-control form-control-lg" placeholder="Name of the movie"
+          <input type="text" class="form-control form-control-lg" placeholder="Movie..."
             aria-label="movie name" [(ngModel)]="searchMovie" name="movieName" id="movieName" >
           <button type="submit" class="btn btn-danger">Search</button>
         </div>
       </div>
     </form>
   </div>
+
+  <!-- (submit)="find() - função é chamada no submit e [(ngModel)]="searchMovie" pega o valor do input -->
 
   <div *ngIf="movie$ | async as movies" class="cardsList row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center gap-2">
     <div class="card mb-3" *ngFor="let movie of movies">
