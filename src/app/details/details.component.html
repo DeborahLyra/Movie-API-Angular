@@ -4,21 +4,12 @@
     </div>
     <div class="col-md-6">
         <div class="mt-3">
-            <h1>{{ movie.Title }}</h1>
+            <h1>{{ movie.Title }}</h1> 
         </div>
         <p><strong>Year:</strong> {{ movie.Year }}</p>
         <p><strong>Movie genre:</strong> {{ movie.Genre }}</p>
-        <p><strong>IMDb ID:</strong> {{ movie.imdbID }}</p>
+        <p><strong>IMDB Rating:</strong> {{ movie.imdbRating }}</p>
         <p>{{ movie.Plot }}</p>
         <button [routerLink]="['/']" class="btn btn-danger">Go back</button>
     </div>
 </div>
-
-
-<!-- 
-  Title: string, 
-  Year : string, 
-  imdbID: string, 
-  Type: string, 
-  Genre: string
-  Poster :string -->
