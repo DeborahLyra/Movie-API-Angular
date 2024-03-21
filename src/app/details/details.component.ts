@@ -16,7 +16,7 @@ export class DetailsComponent {
   constructor(private route: ActivatedRoute, private contentService: ContentService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id'); //pega o ID da rota que é passada pelo route
     if (id) {
       this.movie$ = this.contentService.getMovieID(id);
     }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { forkJoin, map, Observable } from 'rxjs';
 import { Movie } from '../app.model';
 
 interface Search {
@@ -22,7 +22,14 @@ export class ContentService {
     return this.http.get<Search>(`${this.url}&s=${name}`).pipe(map(result => <Movie[]>result.Search))
   }
 
-  getMovieID(name: string) {
-    return this.http.get<Movie>(`${this.url}&plot=full&i=${name}`)
+  getMovieID(id: string) {
+    return this.http.get<Movie>(`${this.url}&plot=full&i=${id}`)
+  }
+  //parte dos favoritos: 
+  getFavoriteMovies(ids: string[]){
+    const requests = ids.map(id => this.getMovieID(id));
+    return forkJoin(requests);
   }
 }
+// forkJoin(requests):
+// aguarda a conclusão de todas as solicitações HTTP
