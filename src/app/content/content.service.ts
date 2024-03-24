@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, map, Observable } from 'rxjs';
+import { forkJoin, map } from 'rxjs';
 import { Movie } from '../app.model';
+import { environment } from '../../environments/environment';
 
 interface Search {
   Search: Movie[];
@@ -13,7 +14,7 @@ interface Search {
 
 export class ContentService {
 
-  private url: string = 'http://www.omdbapi.com/?apikey=65083f78'
+  private url: string = environment.URL;
 
   constructor(private http: HttpClient) { }
 
