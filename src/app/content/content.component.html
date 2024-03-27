@@ -3,9 +3,9 @@
   <div class="col-md-12 d-flex flex-column justify-content-center align-items-center gap-4">
     <form (submit)="find()" class="row g-2">
       <div class="col-12">
-        <label for="movieName" class="form-label">Search for a movie:</label>
+        <label for="movieName" class="form-label text-danger">Search for a movie:</label>
         <div class="input-group">
-          <input type="text" class="form-control form-control-lg" placeholder="Movie..."
+          <input type="text" class="form-control  form-control-lg" placeholder="Movie..."
             aria-label="movie name" [(ngModel)]="searchMovie" name="movieName" id="movieName" >
           <button type="submit" class="btn btn-danger">Search</button>
         </div>
